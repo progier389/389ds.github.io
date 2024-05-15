@@ -16,7 +16,8 @@ This describes the steps needed to build the Directory Server from source.  You 
 
     # git clone https://github.com/389ds/389-ds-base.git
     # cd 389-ds-base
-    # sudo dnf install `grep "^BuildRequires" rpm/389-ds-base.spec.in | awk '{print $2}' | sed -e "s/%{python3_pkgversion}/3/"`
+    # sudo dnf install -y bzip2 rpm-build
+    # sudo dnf install -y $(sed 's/%{python3_pkgversion}/3/' rpm/389-ds-base.spec.in | awk '/^BuildRequires:/ && !/%/ {print $2;}')
 
 #### Use specific source tarball
 
