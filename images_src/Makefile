@@ -12,6 +12,9 @@ IMAGES= \
 	 ../images/cow_btree_3.svg \
 	 ../images/ansible_1.svg \
 	 ../images/ansible_2.svg \
+	 ../images/api.svg \
+	 ../images/api2.svg \
+	 ../images/downstream.svg \
      $(END)
 
 

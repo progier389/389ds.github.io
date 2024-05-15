@@ -1,0 +1,6 @@
+#!/bin/bash
+
+make -i
+pip3 install cairosvg
+cairosvg -f png -o ../images/api.png ../images/api.svg
+cairosvg -f png -o ../images/api2.png ../images/api2.svg

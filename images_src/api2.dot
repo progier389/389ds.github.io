@@ -1,0 +1,32 @@
+// Shows how ansible configure 389ds instances
+
+digraph api {
+    title [label="389ds internal API layout (RHEL)", shape=plaintext, fontsize=18];
+    nsslapd [label="ns-slapd", shape=cylinder, color=red];
+    dbscan [label="dbscan", shape=cylinder, color=red];
+
+    repl [label="replication plugin", shape=cylinder, color=green];
+    plugin [label="a plugin", shape=cylinder, color=green];
+    slapd [label="libslapd", shape=cylinder, color=green];
+
+    backldbm [label="{ libbackldbm | dbapi | { { | } | { db-mdb | liblmdb }}}", shape=Mrecord, color=blue];
+    backbdb [label="{ libback-bdb | db-bdb | libdb-5.3-389ds }", shape=Mrecord, color=blue];
+
+    dbscan->backldbm
+    dbscan->slapd
+    nsslapd->slapd
+    slapd->backldbm
+    repl->slapd
+    repl->backldbm
+    slapd->repl
+    backldbm->repl
+    backldbm->slapd
+    backldbm->backbdb
+    backbdb->backldbm
+    backbdb->slapd
+    slapd->plugin
+    plugin->slapd
+
+}
+    
+

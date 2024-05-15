@@ -1,0 +1,17 @@
+// Shows upstream and downstream relationsship
+
+digraph api {
+    title [label="Upstream and downstream relationship", shape=plaintext, fontsize=18];
+    upstream [label="upstream (github)", shape=cylinder, color=red];
+    rawhide [label="rawhide ()", shape=cylinder, color=red];
+    eln [label="eln ()", shape=cylinder, color=red];
+    fedora [label="Fedora ()", shape=cylinder, color=red];
+    centosStream [label="CentOS Stream ()", shape=cylinder, color=red];
+    rhel [label="RHEL ()", shape=cylinder, color=red];
+    zstream [label="zstream ()", shape=cylinder, color=red];
+
+    upstream->rawhide
+
+}
+    
+
